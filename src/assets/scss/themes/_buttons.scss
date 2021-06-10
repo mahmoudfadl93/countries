@@ -1,0 +1,12 @@
+.country-btn {
+  padding: 0.5rem 3rem;
+  box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.1);
+
+
+  &.with-icon{
+    @include flex($direction: row, $align: center);
+    i {
+      margin-right: 1rem;
+    }
+  }
+}

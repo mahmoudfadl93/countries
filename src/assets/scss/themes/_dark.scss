@@ -1,0 +1,46 @@
+.dark {
+  background-color: $dark-bg;
+  color: $dark-text;
+
+  .app-navbar {
+    background-color: $dark-element;
+
+    .navbar-brand{
+      color: $dark-text;
+    }
+  }
+  .filter-search {
+    background-color: $dark-element;
+    color: $dark-text;
+    input::placeholder {
+      color: $dark-text;
+    }
+  }
+  .p-dropdown.p-component {
+    background-color: $dark-element;
+    color: $dark-text;
+    span {
+      color: $dark-text;
+    }
+    .p-dropdown-panel {
+      background-color: $dark-element;
+      color: $dark-text;
+      li {
+        &:hover {
+          color: $dark-text !important;
+          background: $light-text!important;
+        }
+      }
+    }
+  }
+  .country-cards .card-container {
+    color: $dark-text;
+    background-color: $dark-element;
+  }
+
+  .button {
+    background-color: $dark-element;
+    color: $dark-text;
+  }
+
+}

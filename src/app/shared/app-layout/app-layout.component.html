@@ -1,0 +1,31 @@
+<div class="app-layout" [ngClass]="{'light': (theme | async) === 'light', 'dark': (theme | async) === 'dark'}">
+  <nav class="navbar navbar-light app-navbar">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">
+        <h2>Where in the world?</h2>
+      </a>
+      <div class="button-mode">
+        <p (click)="toggleTheme()">
+          <i class=" fa-moon"  [ngClass]="{'far': (theme | async) === 'light', 'fas': (theme | async) === 'dark'}"></i>
+          <span>Dark mode</span>
+        </p>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container ">
+      <ng-content select="[app-routing]" #routecomponent></ng-content>
+    </div>
+  </main>
+
+  <!-- <footer class="text-muted py-5">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#">Back to top</a>
+      </p>
+      <p class="mb-1">Album example is © Bootstrap, but please download and customize it for yourself!</p>
+      <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
+          href="/docs/5.0/getting-started/introduction/">getting started guide</a>.</p>
+    </div>
+  </footer> -->
+</div>

@@ -1,0 +1,18 @@
+<app-layout>
+  <div app-routing class="home-page">
+    <div class="filter-contanier">
+      <div class="filter-search">
+        <span class="fa fa-search"></span>
+        <input (change)="onSearch($event)" type="text" placeholder="Search for a country..." [(ngModel)]="searchFilter" />
+      </div>
+
+      <div class="filter-dropdown">
+        <p-dropdown (onChange)="onSelectRegion($event)"  placeholder="Select a region" [options]="regionOptions" [(ngModel)]="regionFilter"></p-dropdown>
+      </div>
+
+    </div>
+    <div class="country-cards">
+      <app-card *ngFor="let country of CountryResponse" [country]="country"></app-card>
+    </div>
+  </div>
+</app-layout>

@@ -1,0 +1,77 @@
+.country-contanier {
+
+  h3 {
+    padding-top: 2rem;
+    @include sm {
+      font-size: 1.5rem;
+    }
+  }
+  p {
+    padding: 0.5rem 0;
+  }
+
+
+  .country-back-contanier{
+    margin: 0 1rem 2rem 0;
+  }
+
+
+
+  .country-layout {
+    @include sm {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      .image-contanier{
+        width: 100%;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+    }
+    @include md {
+      flex-direction: row;
+      .image-contanier{
+        width: 40%;
+      }
+    }
+  }
+
+  .country-detail {
+    @include sm {
+      width: 100%;
+    }
+    @include md {
+      width: 50%;
+    }
+  }
+  .country-info {
+    @include flex($direction: column);
+    @include sm {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @include md {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .country-section {
+    padding: 1rem 0;
+  }
+
+
+
+  .border-countries {
+    @include flex($direction: row, $wrap: wrap);
+    .border-countries-buttons{
+      @include flex($direction: row, $wrap: wrap);
+      .country-btn {
+        margin: 0 1rem 2rem 0;
+      }
+    }
+  }
+}

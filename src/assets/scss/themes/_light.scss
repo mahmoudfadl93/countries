@@ -1,0 +1,34 @@
+.light {
+  background-color: $light-bg;
+  color:$light-text;
+  .app-navbar {
+    background-color:  $light-element;
+  }
+  .filter-search{
+    background-color: $light-element;
+    color:$light-input;
+    input::placeholder {
+      color: $light-input;
+    }
+  }
+  .p-dropdown.p-component{
+    background-color: $light-element;
+    color:$light-input;
+  }
+
+  .country-cards  .card-container{
+    color:$light-text;
+    background-color: $light-element;
+
+  }
+  .button {
+    background-color: $light-element;
+    color: $light-text;
+  }
+  .country-btn{
+    background-color: $bg-white;
+    color: $light-text;
+  }
+}
+
+

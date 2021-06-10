@@ -38,6 +38,11 @@
               "node_modules/primeicons/primeicons.css",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "assets/scss"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
