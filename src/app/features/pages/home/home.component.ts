@@ -68,26 +68,33 @@ export class HomeComponent implements OnInit {
   }
 
   onSearch(event: any) {
-    if (this.searchFilter) {
-      this._CountriesService.getCountriesByName(this.searchFilter).subscribe((countries) => {
-        this.isLoading = true;
-        this.CountryResponse = countries
-          .filter((country) =>
-            this.regionFilter
-              ? country.region.includes(this.regionFilter)
-              : country
-          );
-        this.isLoading = false;
-      },
-        (err) => {
-          this.isLoading = false;
-          this.CountryResponse = null!;
-          console.log("🚀 ~ file: home.component.ts ~ line 62 ~ HomeComponent ~ onSelectRegion ~ err")
+    this.searchFilter = this.searchFilter.trim();
 
-        });
-    } else {
-      this.loadData()
+
+    if (this.searchFilter.trim() !== '') {
+      if (this.searchFilter) {
+        this._CountriesService.getCountriesByName(this.searchFilter).subscribe((countries) => {
+          this.isLoading = true;
+          this.CountryResponse = countries
+            .filter((country) =>
+              this.regionFilter
+                ? country.region.includes(this.regionFilter)
+                : country
+            );
+          this.isLoading = false;
+        },
+          (err) => {
+            this.isLoading = false;
+            this.CountryResponse = null!;
+            console.log("🚀 ~ file: home.component.ts ~ line 62 ~ HomeComponent ~ onSelectRegion ~ err")
+
+          });
+      } else {
+        this.loadData()
+      }
     }
+
+
   }
 
 }
