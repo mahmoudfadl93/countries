@@ -4,13 +4,17 @@ import { CardComponent } from './component/card/card.component';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { SpinnerLoaderComponent } from './component/spinner-loader/spinner-loader.component';
+import { NoResultComponent } from './component/no-result/no-result.component';
 
 
 
 @NgModule({
   declarations: [
     CardComponent,
-    AppLayoutComponent
+    AppLayoutComponent,
+    SpinnerLoaderComponent,
+    NoResultComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +24,9 @@ import { FormsModule } from '@angular/forms';
   exports: [
     CardComponent,
     FormsModule,
-    AppLayoutComponent
+    AppLayoutComponent,
+    SpinnerLoaderComponent,
+    NoResultComponent
   ]
 })
 export class SharedModule { }

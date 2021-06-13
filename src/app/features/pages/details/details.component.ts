@@ -10,6 +10,7 @@ import { tap, mergeMap } from 'rxjs/operators';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
+  isLoading!: boolean;
   country$!: Observable<Country>;
   borderCountries$!: Observable<Country[]>;
   constructor(
@@ -20,13 +21,20 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.country$ = this._CountriesService.getCountryByName(params.country).pipe(
-        tap((res) => console.log(res)),
         mergeMap((res) => {
           this.borderCountries$ = this._CountriesService.getCountriesByCodes(res.borders);
           return of(res);
         })
       );
     });
+
+    this.isLoading = true;
+    this.country$.subscribe(() => {
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 100);
+
+    })
   }
 
 
