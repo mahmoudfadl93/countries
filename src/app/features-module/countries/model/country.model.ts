@@ -1,4 +1,4 @@
-export interface Country {
+export interface ICountry {
   name: string;
   topLevelDomain: string[];
   alpha2Code: string;
@@ -17,35 +17,35 @@ export interface Country {
   borders: string[];
   nativeName: string;
   numericCode: string;
-  currencies: Currency[];
-  languages: Language[];
-  translations: Translations;
+  currencies: ICurrency[];
+  languages: ILanguage[];
+  translations: ITranslations;
   flag: string;
-  regionalBlocs: RegionalBloc[];
+  regionalBlocs: IRegionalBloc[];
   cioc: string;
 }
 
-export interface Currency {
+export interface ICurrency {
   code: string;
   name: string;
   symbol: string;
 }
 
-export interface Language {
+export interface ILanguage {
   iso639_1: string;
   iso639_2: string;
   name: string;
   nativeName: string;
 }
 
-export interface RegionalBloc {
+export interface IRegionalBloc {
   acronym: string;
   name: string;
   otherAcronyms: string[];
   otherNames: string[];
 }
 
-export interface Translations {
+export interface ITranslations {
   de: string;
   es: string;
   fr: string;

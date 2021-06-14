@@ -1,17 +1,17 @@
 <ng-container *ngIf="!isLoading">
-<app-layout>
-  <div app-routing *ngIf="country$ | async; let country" class="country-contanier">
-    <div class="country-back-contanier">
-      <button class="button btn country-btn with-icon" [routerLink]="'/'">
-        <i class="fas fa-long-arrow-alt-left"></i>
-        Back
-      </button>
-    </div>
+  <app-layout>
+    <div app-routing *ngIf="country$ | async; let country" class="country-contanier">
+      <div class="country-back-contanier">
+        <button class="button btn country-btn with-icon" [routerLink]="'/'">
+          <i class="fas fa-long-arrow-alt-left"></i>
+          Back
+        </button>
+      </div>
 
 
       <div class="country-layout">
         <div class="image-contanier">
-          <img [src]="country.flag"  alt=" {{country.flag}}  "/>
+          <img [src]="country.flag" alt=" {{country.flag}}  " />
         </div>
 
         <div class="country-detail">
@@ -67,10 +67,8 @@
           </div>
         </div>
       </div>
-
-
-  </div>
-</app-layout>
+    </div>
+  </app-layout>
 </ng-container>
 <ng-container *ngIf="isLoading">
   <app-spinner-loader></app-spinner-loader>

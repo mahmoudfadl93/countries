@@ -21,7 +21,7 @@
       <ng-container *ngIf="CountryResponse ">
 
         <div class="country-cards">
-          <app-card *ngFor="let country of CountryResponse" [country]="country"></app-card>
+          <app-card [ListCard]="CountryResponse"></app-card>
         </div>
       </ng-container>
     </div>

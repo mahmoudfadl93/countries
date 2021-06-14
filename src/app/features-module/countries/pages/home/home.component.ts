@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Country } from '@core/model';
-import { CountriesService } from '@core/services';
+import { ICountry } from '../../model/country.model';
+import { CountriesService } from '../../model/services/countries.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { CountriesService } from '@core/services';
 })
 export class HomeComponent implements OnInit {
   isLoading!: boolean;
-  CountryResponse!: Country[];
+  CountryResponse!: ICountry[];
   searchFilter!: string;
   regionFilter!: string;
   regionOptions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Country, Currency, Language } from '@core/model';
-import { CountriesService } from '@core/services';
 import { Observable, of } from 'rxjs';
-import { tap, mergeMap } from 'rxjs/operators';
+import { mergeMap } from 'rxjs/operators';
+import { ICountry, ICurrency, ILanguage } from '../../model/country.model';
+import { CountriesService } from '../../model/services/countries.service';
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -11,8 +12,8 @@ import { tap, mergeMap } from 'rxjs/operators';
 })
 export class DetailsComponent implements OnInit {
   isLoading!: boolean;
-  country$!: Observable<Country>;
-  borderCountries$!: Observable<Country[]>;
+  country$!: Observable<ICountry>;
+  borderCountries$!: Observable<ICountry[]>;
   constructor(
     private route: ActivatedRoute,
     private _CountriesService: CountriesService
@@ -39,12 +40,11 @@ export class DetailsComponent implements OnInit {
 
 
 
-  displayCurrencies(currencies: Currency[]) {
+  displayCurrencies(currencies: ICurrency[]) {
     return currencies.map((currency) => currency.name).join(', ');
   }
 
-  displayLanguages(languages: Language[]) {
+  displayLanguages(languages: ILanguage[]) {
     return languages.map((language) => language.name).join(', ');
   }
-
 }
