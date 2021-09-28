@@ -40,7 +40,7 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "assets/scss"
+                "src/assets/scss"
               ]
             },
             "scripts": []

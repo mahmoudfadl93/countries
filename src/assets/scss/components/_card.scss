@@ -1,23 +1,14 @@
-.country-cards {
-  app-card {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 286px));
-    grid-auto-rows: auto;
-    justify-content: center;
-    grid-gap: 50px 50px;
-    card-warpper {
-      display: block;
-      width: 100%;
-      height: 100%;
-      .card-container {
-        cursor: pointer;
-        width: 100%;
-        height: 100%;
-        box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.1);
-        .card-img-top {
-          height: 180px;
-        }
-      }
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  .card-container {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.1);
+    .card-img-top {
+      height: 180px;
     }
   }
 }

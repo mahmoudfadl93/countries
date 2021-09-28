@@ -1,4 +1,6 @@
-<card-warpper *ngFor="let country of ListCard" [linkRoute]="'/detals/' + country?.name" [imagePath]="country.flag"
+<card-warpper *ngFor="let country of ListCard"
+ [linkRoute]="'/detals/' + country?.name"
+  [imagePath]="country.flag"
   [cardHeader]="country.name">
 
 
